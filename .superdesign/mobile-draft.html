@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Touch & Shine Mobile | Regina Beauty Salon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #161410;
+            margin: 0;
+        }
+
+        .font-archivo {
+            font-family: 'Archivo', sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        .bottom-fade {
+            background: linear-gradient(to top, #161410 0%, #161410 40%, rgba(22, 20, 16, 0.4) 70%, transparent 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen bg-[#161410] overflow-x-hidden text-[#f3ede3]">
+        
+        <!-- 1. Navbar: Sits above hero in normal flow -->
+        <header class="shrink-0 w-full pt-14 pb-4 px-6 bg-[#161410] border-b border-[#c4a046]/10 flex justify-between items-center z-50">
+            <a href="#" id="nav-logo-top" class="block">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/24baa174-8622-4e27-b5b1-05f5c8c04cd9-logo.png" 
+                     alt="Touch & Shine Logo" 
+                     class="h-6 w-auto brightness-0 invert">
+            </a>
+            <button id="mobile-menu-btn" class="w-10 h-10 flex items-center justify-end text-[#c4a046]" aria-label="Menu">
+                <iconify-icon icon="lucide:menu" class="text-2xl"></iconify-icon>
+            </button>
+        </header>
+
+        <main class="flex-1 w-full">
+            <!-- 2. Hero Section: Logo repeated in hero overlay -->
+            <section class="relative w-full aspect-[4/5] bg-neutral-900 overflow-hidden">
+                <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/9ff76837-03b9-4824-836d-1397acd3c1b7-hero.png" 
+                     alt="Touch & Shine Salon" 
+                     class="w-full h-full object-cover grayscale-[0.2]">
+                <div class="absolute inset-0 bottom-fade"></div>
+                
+                <div class="absolute inset-0 flex flex-col justify-end px-6 pb-12">
+                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/24baa174-8622-4e27-b5b1-05f5c8c04cd9-logo.png" 
+                         alt="Hero Logo" 
+                         class="h-10 w-auto mb-8 brightness-0 invert self-start opacity-80">
+                    
+                    <span class="text-[#c4a046] text-[11px] font-bold tracking-[0.4em] uppercase mb-3 block">Regina, SK</span>
+                    <h1 class="font-archivo text-[3.8rem] leading-[0.9] font-black uppercase text-white tracking-tighter">
+                        Hi, I'm<br>Your <span class="text-[#c4a046]">Barber.</span>
+                    </h1>
+                    <p class="mt-6 text-[#c9bfb0] text-base leading-relaxed max-w-[280px]">
+                        Expert precision styling and signature color services. Experience modern beauty refined.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. Services List -->
+            <section class="px-6 py-12 space-y-6">
+                <div class="flex justify-between items-end border-b border-[#c4a046]/20 pb-2">
+                    <h2 class="text-white font-archivo text-xl uppercase tracking-wider">Service Menu</h2>
+                    <a href="#" id="view-all-services" class="text-[10px] font-bold tracking-[0.2em] text-[#c4a046] uppercase flex items-center gap-1">
+                        Full Menu <iconify-icon icon="lucide:chevron-down"></iconify-icon>
+                    </a>
+                </div>
+                
+                <div class="space-y-px bg-[#c4a046]/10 border border-[#c4a046]/10">
+                    <div class="flex items-center justify-between px-4 py-5 bg-[#161410]">
+                        <span class="text-white text-lg font-medium">Hair Cut</span>
+                        <span class="text-[#c4a046] text-lg font-bold">$21+</span>
+                    </div>
+                    <div class="flex items-center justify-between px-4 py-5 bg-[#161410] border-t border-[#c4a046]/10">
+                        <span class="text-white text-lg font-medium">Beard + Hair</span>
+                        <span class="text-[#c4a046] text-lg font-bold">$37+</span>
+                    </div>
+                    <div class="flex items-center justify-between px-4 py-5 bg-[#161410] border-t border-[#c4a046]/10">
+                        <span class="text-white text-lg font-medium">Keratin</span>
+                        <span class="text-[#c4a046] text-lg font-bold">$210+</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Location & Hours -->
+            <section class="px-6 py-12 bg-[#1c1a16]">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-[#c4a046] text-[10px] font-bold tracking-[0.4em] uppercase mb-6">Hours of Operation</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Monday</span>
+                                <span class="font-medium">11:00 AM – 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Tuesday</span>
+                                <span class="font-medium">12:00 PM – 7:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Wednesday</span>
+                                <span class="font-medium">10:00 AM – 7:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Thursday</span>
+                                <span class="font-medium">10:00 AM – 7:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Friday</span>
+                                <span class="font-medium">10:00 AM – 7:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Saturday</span>
+                                <span class="font-medium">10:00 AM – 7:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#c9bfb0]">Sunday</span>
+                                <span class="font-medium">11:00 AM – 6:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-[#c4a046] text-[10px] font-bold tracking-[0.4em] uppercase mb-2">Location</h3>
+                        <address class="not-italic text-lg text-white font-light">
+                            540 University Park Dr,<br>
+                            Regina, SK S4V 2Z3
+                        </address>
+                        <div class="w-full h-[250px] bg-black/20 border border-[#c4a046]/10 overflow-hidden">
+                            <iframe 
+                                src="https://maps.google.com/maps?q=540%20University%20Park%20Dr%2C%20Regina%2C%20SK%20S4V%202Z3&z=16&output=embed"
+                                class="w-full h-full grayscale opacity-80"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Primary CTA -->
+            <section class="p-6">
+                <a href="https://app.squareup.com/appointments/book/35rmgndz45rl7p/LADHAW9ZFGC7C/start" 
+                   id="cta-book-appointment-bottom" 
+                   class="block w-full bg-[#c4a046] text-[#161410] text-center font-bold py-6 uppercase tracking-[0.25em] text-[13px] transition-transform active:scale-[0.98] rounded-none">
+                    Book Appointment
+                </a>
+            </section>
+
+            <!-- 6. Footer: Logo repeated here -->
+            <footer class="pt-12 pb-[34px] px-6 text-center">
+                <div class="flex flex-col items-center gap-6">
+                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/24baa174-8622-4e27-b5b1-05f5c8c04cd9-logo.png" 
+                         alt="Footer Logo" 
+                         class="h-6 w-auto brightness-0 invert opacity-40">
+                    
+                    <div class="flex gap-6 text-[#c4a046] text-xl">
+                        <a href="#" id="footer-ig"><iconify-icon icon="mdi:instagram"></iconify-icon></a>
+                        <a href="#" id="footer-fb"><iconify-icon icon="mdi:facebook"></iconify-icon></a>
+                        <a href="tel:3065803835" id="footer-tel"><iconify-icon icon="lucide:phone"></iconify-icon></a>
+                    </div>
+                    
+                    <p class="text-[#c9bfb0] text-[9px] font-bold uppercase tracking-[0.3em] opacity-40">
+                        © 2024 Touch & Shine Regina
+                    </p>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Quick Call Floating -->
+        <div class="fixed bottom-8 right-6 z-[60]">
+             <a href="tel:3065803835" 
+                id="btn-floating-call" 
+                class="flex items-center justify-center w-14 h-14 bg-[#c4a046] text-[#161410] rounded-none shadow-2xl active:scale-90 transition-transform border border-[#161410]/20">
+                 <iconify-icon icon="lucide:phone" class="text-xl"></iconify-icon>
+             </a>
+        </div>
+    </div>
+</body>
+</html>

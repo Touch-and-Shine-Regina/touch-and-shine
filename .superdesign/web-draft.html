@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch & Shine Beauty Hair Salon | Regina, SK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #EAB308;
+            --background: #161410;
+            --surface: #1e1b17;
+            --muted: #c9bfb0;
+            --text: #f3ede3;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            --headline-font: 'Archivo', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            scroll-behavior: smooth;
+            margin: 0;
+        }
+
+        .font-display {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .bg-gold {
+            background-color: var(--gold);
+        }
+
+        .border-gold {
+            border-color: var(--gold);
+        }
+
+        .service-row {
+            transition: all 0.3s ease;
+        }
+
+        .service-row:hover {
+            background: rgba(234, 179, 8, 0.05);
+        }
+
+        .sharp-corners {
+            border-radius: 0 !important;
+        }
+
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation-duration: 0.4s;
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        
+        <!-- Navigation - Sticky instead of fixed to avoid covering content -->
+        <header class="sticky top-0 left-0 w-full z-50 bg-[#161410] border-b border-[#EAB308]/20">
+            <nav class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#top" id="nav-logo-link" class="flex items-center">
+                        <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/24baa174-8622-4e27-b5b1-05f5c8c04cd9-logo.png" alt="Touch & Shine" class="h-12 w-auto">
+                    </a>
+                </div>
+                
+                <div class="hidden lg:flex items-center gap-12">
+                    <a href="#services" id="nav-services-link" class="text-[11px] font-semibold tracking-[0.2em] text-[#c9bfb0] hover:text-[#EAB308] transition-colors uppercase">Services</a>
+                    <a href="#contact" id="nav-location-link" class="text-[11px] font-semibold tracking-[0.2em] text-[#c9bfb0] hover:text-[#EAB308] transition-colors uppercase">Location & Hours</a>
+                    <a href="#" id="nav-gallery-link" class="text-[11px] font-semibold tracking-[0.2em] text-[#c9bfb0] hover:text-[#EAB308] transition-colors uppercase">Gallery</a>
+                </div>
+
+                <div class="flex items-center">
+                    <a href="#" id="nav-cta-book-btn" class="bg-[#EAB308] text-[#1a1814] text-[12px] font-bold px-8 py-3.5 transition-all uppercase tracking-widest sharp-corners hover:bg-[#8f7328]">
+                        Book Online
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="top" class="flex-1 relative">
+            <!-- Hero Section -->
+            <section class="relative min-h-[90vh] overflow-hidden">
+                <!-- Right Side: Large Imagery -->
+                <div class="absolute inset-0 w-full h-full overflow-hidden flex justify-end">
+                    <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/9ff76837-03b9-4824-836d-1397acd3c1b7-hero.png" alt="Salon Interior" class="w-full lg:w-[70%] h-full object-cover brightness-75 contrast-110">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#161410] via-[#161410] via-30% lg:via-[#161410]/80 to-transparent"></div>
+                </div>
+
+                <!-- Left Side: Content -->
+                <div class="flex flex-col justify-center px-6 py-16 lg:px-24 lg:py-0 lg:max-w-5xl relative z-20 min-h-[90vh]">
+                    <div class="mb-8">
+                         <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/24baa174-8622-4e27-b5b1-05f5c8c04cd9-logo.png" alt="Logo" class="h-16 w-auto opacity-80">
+                    </div>
+                    <span class="text-[#EAB308] text-xs font-semibold tracking-[0.4em] uppercase mb-4 block">Regina, Saskatchewan</span>
+                    <h1 class="font-['Archivo'] text-[clamp(4rem,10vw,8.5rem)] leading-[0.85] font-extrabold tracking-tighter text-[#f3ede3] mb-8 uppercase relative z-30">
+                        HI, I'M YOUR <br>
+                        <span class="text-[#EAB308]">BARBER.</span>
+                    </h1>
+                    <p class="text-[#c9bfb0] text-lg max-w-md mb-8 leading-relaxed">
+                        Precision grooming and artisan beauty services. Experience Regina's premier studio for hair and skin.
+                    </p>
+                    
+                    <div class="mb-10 space-y-4 max-w-sm">
+                        <div class="flex items-center justify-between border-b border-[#EAB308]/20 pb-2">
+                            <span class="text-sm text-[#f3ede3]">Hair Cut</span>
+                            <span class="text-sm font-semibold text-[#EAB308]">$21 + GST</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-[#EAB308]/20 pb-2">
+                            <span class="text-sm text-[#f3ede3]">Beard + Hair Cut</span>
+                            <span class="text-sm font-semibold text-[#EAB308]">$37 + GST</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <a href="#" id="hero-book-now-btn" class="bg-[#EAB308] text-[#1a1814] text-[12px] font-bold px-10 py-5 transition-all uppercase tracking-widest sharp-corners hover:bg-[#8f7328]">
+                            Book Appointment
+                        </a>
+                        <a href="#services" id="hero-services-scroll" class="group flex items-center gap-4 py-4">
+                            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#f3ede3]">Full Services Menu</span>
+                            <iconify-icon icon="lucide:arrow-down" class="text-[#EAB308]"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full Services Section -->
+            <section id="services" class="py-24 md:py-40 bg-[#161410]">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="mb-24 text-center lg:text-left">
+                        <span class="text-[#EAB308] text-xs font-semibold tracking-[0.4em] uppercase mb-4 block">Menu of Services</span>
+                        <h2 class="font-display text-6xl md:text-8xl font-medium tracking-tight text-[#f3ede3]">Services <span class="text-[#EAB308] italic">&</span> Prices</h2>
+                        <p class="mt-6 text-[#c9bfb0] max-w-2xl">All prices exclude GST. Durations are approximate.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-24">
+                        <!-- Men -->
+                        <div>
+                            <h3 class="font-display text-3xl text-[#f3ede3] border-b border-[#EAB308] pb-4 mb-8 uppercase tracking-widest">Men</h3>
+                            <div class="space-y-6">
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Hair Cut</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$21 + GST</span>
+                                </div>
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors font-medium text-lg">Beard + Hair Cut</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$37 + GST</span>
+                                </div>
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Beard + Razor Cut</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$20 + GST</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Women -->
+                        <div>
+                            <h3 class="font-display text-3xl text-[#f3ede3] border-b border-[#EAB308] pb-4 mb-8 uppercase tracking-widest">Women</h3>
+                            <div class="space-y-6">
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Eyebrows</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$11 + GST</span>
+                                </div>
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Simple Trimming</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$30 + GST</span>
+                                </div>
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Layer Cut</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$40 – $45 + GST</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Waxing -->
+                        <div>
+                            <h3 class="font-display text-3xl text-[#f3ede3] border-b border-[#EAB308] pb-4 mb-8 uppercase tracking-widest">Waxing</h3>
+                            <div class="space-y-6">
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Full Face Wax/Thread</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$38 + GST</span>
+                                </div>
+                                <div class="group service-row flex justify-between items-baseline py-2">
+                                    <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Brazilian Wax</span>
+                                    <span class="text-[#EAB308] font-semibold tabular-nums">$45 + GST</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colour & Keratin -->
+                        <div class="space-y-16">
+                            <div>
+                                <h3 class="font-display text-3xl text-[#f3ede3] border-b border-[#EAB308] pb-4 mb-8 uppercase tracking-widest">Colour</h3>
+                                <div class="space-y-6">
+                                    <div class="group service-row flex justify-between items-baseline py-2">
+                                        <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Root Touch-Up</span>
+                                        <span class="text-[#EAB308] font-semibold tabular-nums">$50 + GST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-3xl text-[#f3ede3] border-b border-[#EAB308] pb-4 mb-8 uppercase tracking-widest">Keratin</h3>
+                                <div class="space-y-6">
+                                    <div class="group service-row flex justify-between items-baseline py-2">
+                                        <span class="text-[#f3ede3] group-hover:text-[#EAB308] transition-colors">Keratin (Short)</span>
+                                        <span class="text-[#EAB308] font-semibold tabular-nums">$210 + GST</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Location & Hours Section -->
+            <section id="contact" class="bg-[#1e1b17] py-24 md:py-40">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+                        <!-- Info Panel -->
+                        <div>
+                            <span class="text-[#EAB308] text-[10px] font-bold tracking-[0.4em] uppercase mb-8 block">Visit Us</span>
+                            <h2 class="font-display text-6xl md:text-8xl font-medium tracking-tight text-[#f3ede3] mb-12">Studio <span class="text-[#EAB308] italic">&</span> Hours</h2>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                                <!-- Address -->
+                                <div>
+                                    <h3 class="text-[#EAB308] text-[11px] font-bold tracking-[0.2em] uppercase mb-6">Regina Location</h3>
+                                    <address class="not-italic text-[#f3ede3] text-xl leading-relaxed">
+                                        540 University Park Dr,<br>
+                                        Regina, SK S4V 2Z3<br>
+                                        Canada
+                                    </address>
+                                    <a href="tel:3065803835" id="location-phone-link" class="mt-8 inline-block text-2xl font-medium text-[#f3ede3] hover:text-[#EAB308] transition-colors">(306) 580-3835</a>
+                                </div>
+
+                                <!-- Hours -->
+                                <div>
+                                    <h3 class="text-[#EAB308] text-[11px] font-bold tracking-[0.2em] uppercase mb-6">Weekly Schedule</h3>
+                                    <ul class="space-y-3 text-sm tracking-wide text-[#c9bfb0]">
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Monday</span> <span class="text-[#f3ede3]">11:00 AM – 6:00 PM</span></li>
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Tuesday</span> <span class="text-[#f3ede3]">12:00 PM – 7:00 PM</span></li>
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Wednesday</span> <span class="text-[#f3ede3]">10:00 AM – 7:00 PM</span></li>
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Thursday</span> <span class="text-[#f3ede3]">10:00 AM – 7:00 PM</span></li>
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Friday</span> <span class="text-[#f3ede3]">10:00 AM – 7:00 PM</span></li>
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Saturday</span> <span class="text-[#f3ede3]">10:00 AM – 7:00 PM</span></li>
+                                        <li class="flex justify-between border-b border-[#EAB308]/10 pb-2"><span>Sunday</span> <span class="text-[#f3ede3]">11:00 AM – 6:00 PM</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Panel -->
+                        <div class="h-full min-h-[400px] border border-[#EAB308]/20">
+                            <iframe 
+                                src="https://maps.google.com/maps?q=540%20University%20Park%20Dr%2C%20Regina%2C%20SK%20S4V%202Z3&z=16&output=embed" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-[#161410] border-t border-[#EAB308]/20 py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-10 mb-12">
+                    <div class="flex flex-col items-center md:items-start gap-4">
+                        <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/03b7bdf8-3346-46c5-b653-cd78b34ce0d6/external-assets/24baa174-8622-4e27-b5b1-05f5c8c04cd9-logo.png" alt="Touch & Shine Logo" class="h-12 w-auto brightness-90">
+                        <div class="font-display text-xl text-[#f3ede3]">
+                            Touch <span class="text-[#EAB308]">&</span> Shine
+                        </div>
+                    </div>
+                    <div class="text-center md:text-right">
+                         <a href="#" id="footer-cta-book-btn" class="bg-[#EAB308] text-[#1a1814] text-[12px] font-bold px-8 py-3.5 transition-all uppercase tracking-widest sharp-corners hover:bg-[#8f7328]">
+                            Book Appointment
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8 pt-8 border-t border-[#EAB308]/10">
+                    <div class="text-[#c9bfb0] text-[10px] font-semibold uppercase tracking-[0.3em]">
+                        © 2024 Touch & Shine Beauty Hair Salon. Regina, SK.
+                    </div>
+                    <div class="flex gap-10 text-[10px] uppercase font-bold tracking-widest">
+                        <a href="#" id="footer-tos-link" class="text-[#c9bfb0] hover:text-[#EAB308] transition-colors">Terms of Service</a>
+                        <a href="#" id="footer-privacy-link" class="text-[#c9bfb0] hover:text-[#EAB308] transition-colors">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
