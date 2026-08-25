@@ -25,7 +25,8 @@ export function BookHeader() {
             width={44}
             height={44}
             className="h-10 w-10 object-contain mix-blend-screen drop-shadow-[0_0_12px_rgba(234,179,8,0.55)] lg:h-11 lg:w-11"
-            priority
+            loading="eager"
+            fetchPriority="high"
           />
           <span className="min-w-0">
             <span className="block truncate font-display text-[13px] font-extrabold tracking-[0.12em] text-white uppercase lg:text-sm">

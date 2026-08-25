@@ -21,7 +21,8 @@ export default function MaintenancePage() {
           width={72}
           height={66}
           className="object-contain mix-blend-screen"
-          priority
+          loading="eager"
+          fetchPriority="high"
         />
         <p className="mt-6 font-display text-[12px] font-extrabold tracking-[0.24em] text-[#EAB308] uppercase">
           Under maintenance
