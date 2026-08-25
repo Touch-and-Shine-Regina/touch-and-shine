@@ -43,47 +43,38 @@ export default function BookPage() {
         Skip to booking
       </a>
       <Header />
-      <main
-        id="booking-main"
-        className="flex min-h-0 flex-1 flex-col"
-        aria-labelledby="book-page-title"
-      >
-        <div className="flex shrink-0 items-center justify-between gap-3 border-b border-[#EAB308]/25 px-4 py-3 sm:px-6 lg:px-8">
-          <div className="min-w-0">
-            <p className="font-display text-[10px] font-extrabold tracking-[0.2em] text-[#EAB308] uppercase">
-              Online Booking
-            </p>
-            <h1
-              id="book-page-title"
-              className="mt-0.5 truncate font-display text-[1.15rem] font-extrabold tracking-[-0.02em] text-white uppercase sm:text-xl"
-            >
-              Book your appointment
-            </h1>
-          </div>
-          <a
-            href={businessInfo.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center border border-[#EAB308]/50 px-3 py-2 font-display text-[11px] font-extrabold tracking-wide text-white uppercase transition-colors hover:border-[#EAB308] hover:bg-[#EAB308]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
-          >
-            New tab
-          </a>
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-[#EAB308]/25 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="min-w-0">
+          <p className="font-display text-[10px] font-extrabold tracking-[0.2em] text-[#EAB308] uppercase">
+            Online Booking
+          </p>
+          <h1 className="mt-0.5 truncate font-display text-[1.15rem] font-extrabold tracking-[-0.02em] text-white uppercase sm:text-xl">
+            Book your appointment
+          </h1>
         </div>
-
-        <div
-          id="booking-widget"
-          className="min-h-0 flex-1 pb-[calc(4.75rem+env(safe-area-inset-bottom))] lg:pb-0"
+        <a
+          href={businessInfo.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center border border-[#EAB308]/50 px-3 py-2 font-display text-[11px] font-extrabold tracking-wide text-white uppercase transition-colors hover:border-[#EAB308] hover:bg-[#EAB308]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
         >
-          <iframe
-            title="Square Appointments booking"
-            src={squareWidgetEmbedUrl}
-            className="block h-full w-full border-0 bg-[#161410]"
-            allow="payment; fullscreen"
-            referrerPolicy="no-referrer-when-downgrade"
-            loading="eager"
-          />
-        </div>
-      </main>
+          New tab
+        </a>
+      </div>
+
+      <div
+        id="booking-widget"
+        className="min-h-0 flex-1 pb-[calc(4.75rem+env(safe-area-inset-bottom))] lg:pb-0"
+      >
+        <iframe
+          title="Square Appointments booking"
+          src={squareWidgetEmbedUrl}
+          className="block h-full w-full border-0 bg-[#161410]"
+          allow="payment"
+          referrerPolicy="no-referrer-when-downgrade"
+          loading="eager"
+        />
+      </div>
 
       <MobileActionBar />
     </div>
