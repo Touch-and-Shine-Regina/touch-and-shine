@@ -11,6 +11,7 @@ import {
 } from "react";
 import {
   applyThemeClass,
+  DEFAULT_THEME,
   persistTheme,
   resolveTheme,
   type Theme,
@@ -26,9 +27,7 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Always start with the same value on server + first client render to avoid hydration mismatches.
-  // The beforeInteractive script already applies the real theme class on <html>.
-  const [theme, setThemeState] = useState<Theme>("light");
+  const [theme, setThemeState] = useState<Theme>(DEFAULT_THEME);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {

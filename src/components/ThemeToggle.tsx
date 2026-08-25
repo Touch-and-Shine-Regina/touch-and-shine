@@ -11,8 +11,7 @@ type ThemeToggleProps = {
 
 export function ThemeToggle({ className = "", variant = "icon" }: ThemeToggleProps) {
   const { theme, ready, toggleTheme } = useTheme();
-  // Until mounted, render the light-mode icon so SSR HTML matches the first client paint.
-  const isDark = ready && theme === "dark";
+  const isDark = !ready || theme === "dark";
   const label = isDark ? "Switch to light mode" : "Switch to dark mode";
 
   if (variant === "menu") {

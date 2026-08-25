@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Outfit } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeLightTip } from "@/components/ThemeLightTip";
 import { businessInfo, getFullAddress } from "@/data/business";
 import { getOpeningHoursSpecification } from "@/lib/seo";
 import { themeInitScript } from "@/lib/theme";
@@ -163,13 +164,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en-CA"
       suppressHydrationWarning
-      className={`${outfit.variable} ${archivo.variable} h-full scroll-smooth antialiased`}
+      className={`${outfit.variable} ${archivo.variable} dark h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-cream font-sans text-charcoal">
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <ThemeLightTip />
+        </ThemeProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
