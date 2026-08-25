@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { CloseIcon } from "@/components/icons";
 import { useTheme } from "@/components/ThemeProvider";
 import {
@@ -10,15 +11,16 @@ import {
 } from "@/lib/theme";
 
 export function ThemeLightTip() {
+  const pathname = usePathname();
   const { theme, ready, setTheme } = useTheme();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || pathname === "/book") return;
     setVisible(theme === "dark" && !readThemeTipDismissed());
-  }, [ready, theme]);
+  }, [ready, theme, pathname]);
 
-  if (!visible) return null;
+  if (pathname === "/book" || !visible) return null;
 
   function dismiss() {
     persistThemeTipDismissed();

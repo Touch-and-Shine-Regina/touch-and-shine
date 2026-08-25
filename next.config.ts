@@ -42,7 +42,18 @@ const contentSecurityPolicy = [
   ...(isDev ? [] : ["upgrade-insecure-requests"]),
 ].join("; ");
 
-const securityHeaders = [
+const permissionsPolicyDefault =
+  "camera=(), microphone=(), geolocation=()";
+
+const permissionsPolicyBook =
+  [
+    "camera=()",
+    "microphone=()",
+    "geolocation=()",
+    'payment=(self "https://app.squareup.com" "https://book.squareup.com" "https://squareup.com" "https://pay.google.com")',
+  ].join(", ");
+
+const buildHeaders = (permissionsPolicy: string, includeCoop: boolean) => [
   { key: "Content-Security-Policy", value: contentSecurityPolicy },
   ...(isDev
     ? []
@@ -55,13 +66,15 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "X-Frame-Options", value: "DENY" },
-  {
-    key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=()",
-  },
+  { key: "Permissions-Policy", value: permissionsPolicy },
   { key: "X-DNS-Prefetch-Control", value: "on" },
-  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  ...(includeCoop
+    ? [{ key: "Cross-Origin-Opener-Policy", value: "same-origin" as const }]
+    : []),
 ];
+
+const securityHeaders = buildHeaders(permissionsPolicyDefault, true);
+const bookSecurityHeaders = buildHeaders(permissionsPolicyBook, false);
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
@@ -72,6 +85,14 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/book",
+        headers: bookSecurityHeaders,
+      },
+      {
+        source: "/book/:path*",
+        headers: bookSecurityHeaders,
+      },
       {
         source: "/:path*",
         headers: securityHeaders,
