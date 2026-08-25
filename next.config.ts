@@ -36,6 +36,8 @@ const contentSecurityPolicy = [
     "https://app.squareup.com",
     "https://squareup.com",
     "https://*.squareup.com",
+    "https://book.squareup.com",
+    "https://pay.google.com",
     "https://maps.google.com",
     "https://www.google.com",
   ].join(" "),
@@ -57,7 +59,12 @@ const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
   {
     key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=()",
+    value: [
+      "camera=()",
+      "microphone=()",
+      "geolocation=()",
+      'payment=(self "https://app.squareup.com" "https://book.squareup.com" "https://pay.google.com" "https://www.google.com")',
+    ].join(", "),
   },
   { key: "X-DNS-Prefetch-Control", value: "on" },
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
@@ -72,6 +79,17 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/book",
+        headers: [
+          {
+            key: "Link",
+            value:
+              "<https://app.squareup.com>; rel=preconnect, <https://web.squarecdn.com>; rel=preconnect, <https://book.squareup.com>; rel=preconnect",
+          },
+          ...securityHeaders,
+        ],
+      },
       {
         source: "/:path*",
         headers: securityHeaders,
