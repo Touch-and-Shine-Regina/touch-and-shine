@@ -142,11 +142,11 @@ function HeroActions({ fullWidth }: { fullWidth?: boolean }) {
 function MobileHero({ today }: { today: HoursInfo }) {
   return (
     <div className="lg:hidden">
-      <div className="relative h-[min(72svh,34rem)] overflow-hidden">
+      <div className="relative h-[min(72svh,34rem)] overflow-hidden bg-[#161410]">
         <HeroImage
           src={siteImages.hero}
           alt="Salon styling at Touch & Shine in Regina"
-          sizes="(max-width: 640px) 100vw, 100vw"
+          sizes="100vw"
           objectPosition="70% 10%"
           preload
           quality={70}
@@ -191,6 +191,7 @@ function DesktopHero({ today }: { today: HoursInfo }) {
           sizes="(min-width: 1024px) 52vw, 100vw"
           objectPosition="88% 8%"
           preload={false}
+          quality={70}
         />
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-[55%] bg-[linear-gradient(to_right,#161410_0%,rgba(22,20,16,0.88)_32%,rgba(234,179,8,0.2)_62%,transparent_100%)]"
