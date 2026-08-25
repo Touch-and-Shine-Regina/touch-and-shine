@@ -44,9 +44,7 @@ const contentSecurityPolicy = [
   ...(isDev ? [] : ["upgrade-insecure-requests"]),
 ].join("; ");
 
-const permissionsPolicy = "camera=(), microphone=(), geolocation=()";
-
-const sharedSecurityHeaders = [
+const securityHeaders = [
   { key: "Content-Security-Policy", value: contentSecurityPolicy },
   ...(isDev
     ? []
@@ -59,18 +57,18 @@ const sharedSecurityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "X-Frame-Options", value: "DENY" },
-  { key: "Permissions-Policy", value: permissionsPolicy },
+  {
+    key: "Permissions-Policy",
+    value: [
+      "camera=()",
+      "microphone=()",
+      "geolocation=()",
+      'payment=(self "https://app.squareup.com" "https://book.squareup.com" "https://pay.google.com" "https://www.google.com")',
+    ].join(", "),
+  },
   { key: "X-DNS-Prefetch-Control", value: "on" },
-];
-
-/** Default pages: COOP hardening. Booking defers to iframe allow="payment". */
-const defaultSecurityHeaders = [
-  ...sharedSecurityHeaders,
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
 ];
-
-/** /book: no extra preconnect (Square adds its own); no COOP so Pay iframe can delegate. */
-const bookSecurityHeaders = [...sharedSecurityHeaders];
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
@@ -83,11 +81,18 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/book",
-        headers: bookSecurityHeaders,
+        headers: [
+          {
+            key: "Link",
+            value:
+              "<https://app.squareup.com>; rel=preconnect, <https://web.squarecdn.com>; rel=preconnect, <https://book.squareup.com>; rel=preconnect",
+          },
+          ...securityHeaders,
+        ],
       },
       {
         source: "/:path*",
-        headers: defaultSecurityHeaders,
+        headers: securityHeaders,
       },
     ];
   },
