@@ -43,7 +43,7 @@ export function PopularServices() {
             </h2>
             <a
               href="#services"
-              className="inline-flex min-h-11 items-center gap-1 font-display text-sm font-extrabold text-[#EAB308] uppercase focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
+              className="inline-flex min-h-12 min-w-12 shrink-0 items-center justify-center gap-1 px-2 font-display text-sm font-extrabold text-[#EAB308] uppercase focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
             >
               View all
               <ArrowIcon className="h-3.5 w-3.5" />

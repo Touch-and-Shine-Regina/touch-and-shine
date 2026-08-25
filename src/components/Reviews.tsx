@@ -7,7 +7,11 @@ import { btnOutline, container } from "@/lib/styles";
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5 text-gold" aria-label={`${rating} out of 5 stars`}>
+    <div
+      role="img"
+      className="flex gap-0.5 text-gold"
+      aria-label={`${rating} out of 5 stars`}
+    >
       {Array.from({ length: 5 }, (_, index) => (
         <StarIcon
           key={index}
@@ -130,12 +134,11 @@ export function Reviews() {
               className="scrollbar-hide flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-1 touch-pan-x focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:gap-4"
             >
               {reviews.map((review, index) => (
-                <article
-                  key={review.id}
-                  role="group"
-                  aria-label={`Review ${index + 1} of ${reviews.length}`}
-                  className="surface-luxe flex w-[min(78vw,19.5rem)] shrink-0 snap-start flex-col rounded-none p-5 sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
-                >
+              <article
+                key={review.id}
+                aria-label={`Review ${index + 1} of ${reviews.length}`}
+                className="surface-luxe flex w-[min(78vw,19.5rem)] shrink-0 snap-start flex-col rounded-none p-5 sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
+              >
                   <div className="h-px w-8 bg-gold" />
                   <div className="mt-4">
                     <Stars rating={review.rating} />

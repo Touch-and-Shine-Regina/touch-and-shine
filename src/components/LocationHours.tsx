@@ -1,4 +1,5 @@
-import { businessInfo, getFullAddress } from "@/data/business";
+import { getFullAddress, businessInfo } from "@/data/business";
+import { LocationMap } from "@/components/LocationMap";
 import { btnDark, container } from "@/lib/styles";
 
 export function LocationHours() {
@@ -44,13 +45,7 @@ export function LocationHours() {
               ))}
             </ul>
           </div>
-          <iframe
-            title={`${businessInfo.name} map`}
-            src={businessInfo.googleMapsEmbedUrl}
-            className="h-56 w-full border-0 lg:h-full lg:min-h-[28rem]"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <LocationMap className="min-h-56 lg:min-h-[28rem]" />
         </div>
       </div>
     </section>

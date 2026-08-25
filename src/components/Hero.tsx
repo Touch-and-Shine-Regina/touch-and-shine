@@ -146,9 +146,10 @@ function MobileHero({ today }: { today: HoursInfo }) {
         <HeroImage
           src={siteImages.hero}
           alt="Salon styling at Touch & Shine in Regina"
-          sizes="100vw"
+          sizes="(max-width: 640px) 100vw, 100vw"
           objectPosition="70% 10%"
           preload
+          quality={70}
         />
         <div
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,#161410_0%,rgba(22,20,16,0.7)_36%,rgba(234,179,8,0.16)_62%,transparent_100%)]"

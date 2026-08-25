@@ -69,7 +69,7 @@ export function StoreGallery() {
             </p>
             <div className="mt-3 h-px w-14 bg-[#EAB308]" />
           </div>
-          <p className="pb-1 text-[11px] font-semibold tracking-[0.16em] text-white/40 uppercase">
+          <p className="pb-1 text-[11px] font-semibold tracking-[0.16em] text-white/65 uppercase">
             {reduceMotion ? "Swipe to browse" : "Hover to pause"}
           </p>
         </div>

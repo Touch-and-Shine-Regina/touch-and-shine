@@ -61,12 +61,12 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1 sm:gap-1.5">
+        <div className="flex items-center gap-2 sm:gap-2.5">
           <span className="hidden lg:inline-flex">
             <ThemeToggle />
           </span>
           <span className="lg:hidden">
-            <BookButton size="sm" className="!rounded-none">
+            <BookButton size="sm" className="!min-h-12 !min-w-12 !rounded-none !px-4">
               Book
             </BookButton>
           </span>
@@ -75,7 +75,7 @@ export function Header() {
           </span>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center text-white lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
+            className="inline-flex h-12 w-12 min-h-12 min-w-12 items-center justify-center text-white lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}

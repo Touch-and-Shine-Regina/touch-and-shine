@@ -10,6 +10,7 @@ type HeroImageProps = {
   className?: string;
   objectPosition?: string;
   preload?: boolean;
+  quality?: number;
 };
 
 export function HeroImage({
@@ -19,6 +20,7 @@ export function HeroImage({
   className = "object-cover",
   objectPosition,
   preload = false,
+  quality = 72,
 }: HeroImageProps) {
   const [loaded, setLoaded] = useState(false);
 
@@ -32,6 +34,7 @@ export function HeroImage({
         alt={alt}
         fill
         sizes={sizes}
+        quality={quality}
         preload={preload}
         className={`${className} ${loaded ? "opacity-100" : "opacity-0"}`}
         style={objectPosition ? { objectPosition } : undefined}
