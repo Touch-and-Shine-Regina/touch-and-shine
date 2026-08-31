@@ -79,10 +79,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: businessInfo.logoPath,
-    apple: businessInfo.logoPath,
-  },
   openGraph: {
     title: "Touch & Shine Beauty Hair Salon | Regina, SK",
     description,
