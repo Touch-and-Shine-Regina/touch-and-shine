@@ -4,7 +4,6 @@ import { BookButton } from "@/components/BookButton";
 import {
   ArrowIcon,
   BrowIcon,
-  ComboIcon,
   FaceIcon,
   KeratinIcon,
   ScissorsIcon,
@@ -23,7 +22,7 @@ type PopularItem = {
 };
 
 export const popularQuickServices: PopularItem[] = [
-  { label: "Haircut", duration: "30 min", price: "$21+", tab: "mens", Icon: ScissorsIcon },
+  { label: "Haircut", duration: "45 min", price: "$27+", tab: "mens", Icon: ScissorsIcon },
   { label: "Brows", duration: "20 min", price: "$11+", tab: "womens", Icon: BrowIcon },
   { label: "Facial", duration: "45 min", price: "$65+", tab: "womens", Icon: FaceIcon },
   { label: "Keratin", duration: "2.5 hrs", price: "$210+", tab: "keratin", Icon: KeratinIcon },
@@ -78,29 +77,6 @@ export function PopularServices() {
           </div>
         </div>
 
-        <a
-          href="#services"
-          onClick={(event) => {
-            event.preventDefault();
-            openServiceTab("combos");
-          }}
-          className="mt-3.5 flex items-center gap-3.5 border border-[#EAB308]/35 bg-black/30 px-4 py-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAB308]"
-        >
-          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center bg-[#EAB308]/15 text-[#EAB308]">
-            <ComboIcon className="h-4 w-4" />
-          </span>
-          <span className="min-w-0 flex-1">
-            <span className="block font-display text-[11px] font-extrabold tracking-[0.18em] text-[#EAB308] uppercase">
-              Combo packages
-            </span>
-            <span className="mt-1 block text-[15px] leading-snug font-medium text-white">
-              Save more when you pair services.
-            </span>
-          </span>
-          <span className="shrink-0 font-display text-sm font-extrabold text-[#EAB308] uppercase">
-            Explore
-          </span>
-        </a>
       </div>
     </section>
   );

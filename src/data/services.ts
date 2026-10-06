@@ -13,42 +13,28 @@ export const serviceCategories: ServiceCategoryInfo[] = [
   { id: "waxing", label: "Waxing" },
   { id: "color", label: "Colour" },
   { id: "keratin", label: "Keratin" },
-  { id: "combos", label: "Combos" },
 ];
 
 export const services: Service[] = [
   // Men's Services
   {
-    name: "Hair Cut",
+    name: "Hair Cut + Shampoo",
     category: "mens",
-    price: "$21 + GST",
-    duration: "30 min",
-    featured: true,
-  },
-  { name: "Beard", category: "mens", price: "$18 + GST", duration: "20 min" },
-  {
-    name: "Beard + Hair Cut",
-    category: "mens",
-    price: "$37 + GST",
+    price: "$27 + GST",
     duration: "45 min",
     featured: true,
   },
-  { name: "Beard + Threading", category: "mens", price: "$23 + GST", duration: "30 min" },
-  { name: "Beard + Razor Cut", category: "mens", price: "$20 + GST", duration: "25 min" },
-
-  // Combo Packages
+  { name: "Haircut + Shampoo", category: "mens", price: "$27 + GST", duration: "60 min" },
+  { name: "Beard", category: "mens", price: "$21 + GST", duration: "20 min" },
   {
-    name: "Haircut + Beard + Cleanup",
-    category: "combos",
-    price: "$75 + GST",
-    duration: "75 min",
+    name: "Beard + Hair Cut",
+    category: "mens",
+    price: "$43 + GST",
+    duration: "45 min",
+    featured: true,
   },
-  {
-    name: "Hair + Beard + Facial",
-    category: "combos",
-    price: "$90 + GST",
-    duration: "90 min",
-  },
+  { name: "Beard + Threading", category: "mens", price: "$24 + GST", duration: "30 min" },
+  { name: "Beard + Razor Cut", category: "mens", price: "$24 + GST", duration: "25 min" },
 
   // Brows, face, facials and women's services are grouped under Women
   {
@@ -93,6 +79,13 @@ export const services: Service[] = [
     category: "womens",
     price: "$80 + GST",
     duration: "75 min",
+  },
+  { name: "Hydra Facial", category: "womens", price: "$100 + GST", duration: "60 min" },
+  {
+    name: "Anti Dandriff/Anti-Lice/Anti-Hairfall",
+    category: "womens",
+    price: "Price varies",
+    duration: "90 min",
   },
 
   // Waxing tab includes face threading/waxing and body waxing
@@ -171,7 +164,7 @@ export const services: Service[] = [
     name: "Keratin, Long Hair",
     category: "keratin",
     price: "$320 + GST",
-    duration: "180 min",
+    duration: "210 min",
   },
   {
     name: "Keratin, Extra Long & Thick Hair",

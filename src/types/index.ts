@@ -3,8 +3,7 @@ export type ServiceCategory =
   | "womens"
   | "waxing"
   | "color"
-  | "keratin"
-  | "combos";
+  | "keratin";
 
 export type ServiceTabId = "popular" | ServiceCategory;
 
