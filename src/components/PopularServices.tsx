@@ -22,7 +22,7 @@ type PopularItem = {
 };
 
 export const popularQuickServices: PopularItem[] = [
-  { label: "Haircut", duration: "45 min", price: "$27+", tab: "mens", Icon: ScissorsIcon },
+  { label: "Haircut", duration: "30 min", price: "$24+", tab: "mens", Icon: ScissorsIcon },
   { label: "Brows", duration: "20 min", price: "$11+", tab: "womens", Icon: BrowIcon },
   { label: "Facial", duration: "45 min", price: "$65+", tab: "womens", Icon: FaceIcon },
   { label: "Keratin", duration: "2.5 hrs", price: "$210+", tab: "keratin", Icon: KeratinIcon },

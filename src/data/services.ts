@@ -8,6 +8,7 @@ export type { Service, ServiceCategory };
  */
 export const serviceCategories: ServiceCategoryInfo[] = [
   { id: "popular", label: "Popular" },
+  { id: "all", label: "All" },
   { id: "mens", label: "Men" },
   { id: "womens", label: "Women" },
   { id: "waxing", label: "Waxing" },
@@ -18,13 +19,19 @@ export const serviceCategories: ServiceCategoryInfo[] = [
 export const services: Service[] = [
   // Men's Services
   {
+    name: "Hair Cut",
+    category: "mens",
+    price: "$24 + GST",
+    duration: "30 min",
+    featured: true,
+  },
+  {
     name: "Hair Cut + Shampoo",
     category: "mens",
     price: "$27 + GST",
-    duration: "45 min",
+    duration: "35 min",
     featured: true,
   },
-  { name: "Haircut + Shampoo", category: "mens", price: "$27 + GST", duration: "60 min" },
   { name: "Beard", category: "mens", price: "$21 + GST", duration: "20 min" },
   {
     name: "Beard + Hair Cut",
@@ -203,5 +210,6 @@ export const featuredServices = services.filter((service) => service.featured);
 
 export function getServicesByTab(tab: ServiceTabId) {
   if (tab === "popular") return featuredServices;
+  if (tab === "all") return services;
   return services.filter((service) => service.category === tab);
 }

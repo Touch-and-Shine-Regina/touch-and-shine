@@ -5,7 +5,7 @@ export type ServiceCategory =
   | "color"
   | "keratin";
 
-export type ServiceTabId = "popular" | ServiceCategory;
+export type ServiceTabId = "popular" | "all" | ServiceCategory;
 
 export type Service = {
   name: string;

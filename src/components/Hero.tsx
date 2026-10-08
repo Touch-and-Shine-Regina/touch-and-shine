@@ -8,7 +8,7 @@ import { siteImages } from "@/data/images";
 import { getTodayHoursInfo } from "@/lib/hours";
 
 const featuredMenu = [
-  { name: "Hair Cut + Shampoo", price: "$27 + GST", duration: "45 min" },
+  { name: "Hair Cut + Shampoo", price: "$27 + GST", duration: "35 min" },
   { name: "Beard + Hair Cut", price: "$43 + GST", duration: "45 min" },
   { name: "Regular Facial", price: "$65 + GST", duration: "60 min" },
   { name: "Keratin, Short Hair", price: "$210 + GST", duration: "2 hr" },
